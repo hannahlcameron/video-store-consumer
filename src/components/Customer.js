@@ -7,7 +7,9 @@ import axios from 'axios';
 class Customer extends Component {
   render() {
     return (
-      'Im a customer'
+      <p>
+      {this.props.name}
+      </p>
     );
   }
 }

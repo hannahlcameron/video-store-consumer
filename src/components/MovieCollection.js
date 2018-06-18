@@ -3,7 +3,7 @@ import PropTypes from 'prop-types';
 import axios from "axios";
 import Movie from "./Movie"
 
-URL = 'http://localhost:3000/';
+const URL = 'http://localhost:3000/';
 
 
 class MovieCollection extends Component {
