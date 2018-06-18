@@ -4,7 +4,7 @@ import axios from 'axios';
 import MovieCollection from './MovieCollection'
 import CustomerCollection from './CustomerCollection'
 
-URL = 'http://localhost:3000/';
+
 class Container extends Component {
 
 constructor() {

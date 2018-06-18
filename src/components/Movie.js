@@ -4,9 +4,13 @@ import axios from 'axios';
 
 
 class Movie extends Component {
+
+
   render() {
     return (
-      'hello im in movie!'
+      <p>
+      {this.props.title}
+      </p>
     );
   }
 }
