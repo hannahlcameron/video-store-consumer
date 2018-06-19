@@ -7,15 +7,14 @@ const URL = 'http://localhost:3000/';
 
 
 class CustomerCollection extends Component {
-  // static propTypes = {
-  //   customers:PropTypes.array.isRequired,
-  // }
+  static propTypes = {
+    callbackgetSelectedCustomer:PropTypes.func.isRequired,
+  }
 
   constructor(){
     super();
     this.state= {
       customers: [],
-      selectedCustomer: 'none'
     }
   }
 
@@ -36,20 +35,20 @@ class CustomerCollection extends Component {
     })
   }
 
-  getSelectedCustomer = (name) => {
-    this.setState({
-      selectedCustomer: name
-    })
+  selectedCustomerbridge = (name) => {
+    this.props.callbackgetSelectedCustomer(name);
   }
+
   render() {
+
     const each_customer = this.state.customers.map((customer, index)=>{
       console.log(customer.name);
-      return <Customer key={index} name={customer.name} callbackgetSelectedCustomer={this.getSelectedCustomer}/>
+      return <Customer key={index} name={customer.name} callbackgetSelectedCustomer={this.selectedCustomerbridge}/>
     })
 
     return (
       <div>
-      <h1>Selected Customer {this.state.selectedCustomer}</h1>
+
       <h1> CUSTOMERS </h1>
       <ul>
       {each_customer}

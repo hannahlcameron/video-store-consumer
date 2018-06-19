@@ -2,18 +2,37 @@ import React, { Component } from 'react';
 import MovieCollection from './MovieCollection'
 import CustomerCollection from './CustomerCollection'
 import SearchForm from './SearchForm'
-import { BrowserRouter as Router, Route, Link } from "react-router-dom";
+import { BrowserRouter as Router, Route, Link, Props } from "react-router-dom";
 
 
 
 class Container extends Component {
+  constructor() {
+    super();
+    this.state = {
+      selectedCustomer:'none',
+      selectedMovie: 'none'
+    }
+  }
 
+  getSelectedMovie = (title)=> {
+    this.setState({
+      selectedMovie: title
+    })
+  }
 
+  getSelectedCustomer = (name) => {
+    this.setState({
+      selectedCustomer: name
+    })
+  }
   render() {
 
     return (
       <Router>
       <div>
+        <h1>Selected Customer {this.state.selectedCustomer}</h1>
+        <h1>Selected Movie {this.state.selectedMovie}</h1>
         <ul>
         <li>
           <Link to="/">Home</Link>
@@ -32,10 +51,11 @@ class Container extends Component {
 
         <hr />
 
-        
+
         <Route exact path="/search" component={SearchForm} />
         <Route exact path="/library" component={MovieCollection} />
-        <Route path="/customers" component={CustomerCollection} />
+        <Route path="/customers" render={props => <CustomerCollection
+          callbackgetSelectedCustomer = {this.getSelectedCustomer} />} />
 
       </div>
     </Router>
