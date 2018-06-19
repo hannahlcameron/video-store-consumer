@@ -3,14 +3,16 @@ import MovieCollection from './MovieCollection'
 import CustomerCollection from './CustomerCollection'
 import SearchForm from './SearchForm'
 import { BrowserRouter as Router, Route, Link, Props } from "react-router-dom";
+import axios from "axios";
 
-
+const URL = 'http://localhost:3000/';
 
 class Container extends Component {
   constructor() {
     super();
     this.state = {
-      selectedCustomer:'none',
+      selectedCustomerName:'none',
+      selectedCustomerId: "none",
       selectedMovie: 'none'
     }
   }
@@ -21,18 +23,34 @@ class Container extends Component {
     })
   }
 
-  getSelectedCustomer = (name) => {
+  getSelectedCustomer = (customer) => {
     this.setState({
-      selectedCustomer: name
+      selectedCustomerName: customer.name,
+      selectedCustomerId: customer.id
     })
   }
+
+  makeRental = (event) => {
+    axios.post(URL+"/rentals/"+this.state.selectedMovie+"/check-out", {
+      title: this.state.selectedMovie,
+      customer_id: this.state.selectedCustomerId,
+      due_date: Date.now() + 7
+    })
+    .then((response)=>{
+      
+    })
+
+  }
+
+
   render() {
 
     return (
       <Router>
       <div>
-        <h1>Selected Customer {this.state.selectedCustomer}</h1>
+        <h1>Selected Customer {this.state.selectedCustomerName}</h1>
         <h1>Selected Movie {this.state.selectedMovie}</h1>
+        <button onClick={this.makeRental}>Check out new Rental</button>
         <ul>
         <li>
           <Link to="/">Home</Link>

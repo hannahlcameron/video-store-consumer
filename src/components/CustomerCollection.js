@@ -35,15 +35,14 @@ class CustomerCollection extends Component {
     })
   }
 
-  selectedCustomerbridge = (name) => {
-    this.props.callbackgetSelectedCustomer(name);
+  selectedCustomerbridge = (customer) => {
+    this.props.callbackgetSelectedCustomer(customer);
   }
 
   render() {
 
     const each_customer = this.state.customers.map((customer, index)=>{
-      console.log(customer.name);
-      return <Customer key={index} name={customer.name} callbackgetSelectedCustomer={this.selectedCustomerbridge}/>
+      return <Customer key={index} name={customer.name} id={customer.id} callbackgetSelectedCustomer={this.selectedCustomerbridge}/>
     })
 
     return (

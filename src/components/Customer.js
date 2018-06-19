@@ -10,13 +10,14 @@ class Customer extends Component {
   }
 
   onClickCustomer =(event) => {
-    this.props.callbackgetSelectedCustomer(event.target.name)
+    console.log(event.target.id);
+    this.props.callbackgetSelectedCustomer(event.target)
   }
   render() {
     return (
       <li>
       {this.props.name}
-        <button onClick={this.onClickCustomer} name={this.props.name}>Select Customer</button>
+        <button onClick={this.onClickCustomer} name={this.props.name} id={this.props.id}>Select Customer</button>
       </li>
     );
   }
