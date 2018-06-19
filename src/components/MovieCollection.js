@@ -35,14 +35,21 @@ class MovieCollection extends Component {
       console.log(error);
     })
   }
+
+  getSelectedMovie = (title)=> {
+    this.setState({
+      selectedMovie: title
+    })
+  }
   render() {
     const each_movie = this.state.movies.map((movie, index)=>{
       console.log(movie.title);
-      return <Movie key={index} title={movie.title}/>
+      return <Movie key={index} title={movie.title} callbackgetSelectedMovie={this.getSelectedMovie}/>
     })
 
     return (
       <div>
+      <h1>Selected Movie {this.state.selectedMovie}</h1>
       <h1> MOVIES </h1>
       <ul>
       {each_movie}

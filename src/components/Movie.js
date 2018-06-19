@@ -5,11 +5,12 @@ import PropTypes from 'prop-types';
 
 class Movie extends Component {
   static propTypes = {
-    title: PropTypes.string.isRequired
+    title: PropTypes.string.isRequired,
+    callbackgetSelectedMovie: PropTypes.func.isRequired
   }
 
   onClickMovie=(event)=> {
-    console.log(event.target.name);
+    this.props.callbackgetSelectedMovie(event.target.name);
   }
 
   render() {
