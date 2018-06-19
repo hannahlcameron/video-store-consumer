@@ -42,8 +42,7 @@ class MovieCollection extends Component {
 
   render() {
     const each_movie = this.state.movies.map((movie, index)=>{
-      console.log(movie.title);
-      return <Movie key={index} title={movie.title} callbackgetSelectedMovie={this.selectedMoviebridge}/>
+      return <Movie key={index} title={movie.title} callbackgetSelectedMovie={this.selectedMoviebridge} inLibrary={true}/>
     })
 
     return (

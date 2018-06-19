@@ -44,11 +44,11 @@ class SearchForm extends Component {
 
 
     render() {
-      //
-      // const each_movie = this.state.searchResult.map((movie, index)=>{
-      //   console.log(movie.title);
-      //   return <Movie key={index} title={movie.title} />
-      // })
+
+      const each_movie = this.state.searchResult.map((movie, index)=>{
+        console.log(movie.title);
+        return <Movie key={index} title={movie.title} inLibrary={false}/>
+      })
 
       return (
         <div>
@@ -61,6 +61,7 @@ class SearchForm extends Component {
             <button type="submit" className="new-card-form__form-button">Submit</button>
             </form>
             <ul>
+            {each_movie}
             </ul>
         </div>
       );
