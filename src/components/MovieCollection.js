@@ -14,7 +14,8 @@ class MovieCollection extends Component {
   constructor(){
     super();
     this.state= {
-      movies: []
+      movies: [],
+      selectedMovie: 'none'
     }
   }
 

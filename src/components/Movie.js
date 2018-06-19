@@ -8,11 +8,15 @@ class Movie extends Component {
     title: PropTypes.string.isRequired
   }
 
+  onClickMovie=(event)=> {
+    console.log(event.target.name);
+  }
 
   render() {
     return (
-      <li>
+      <li >
       {this.props.title}
+      <button onClick={this.onClickMovie} name={this.props.title}>Select Movie</button>
       </li>
     );
   }
