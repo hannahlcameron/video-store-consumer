@@ -42,12 +42,28 @@ class SearchForm extends Component {
 
     }
 
+    addMovieToLibrary = (params)=> {
+      axios.request({
+        url: `${URL}/movies`,
+        methods: 'post',
+        params: params,
+      })
+      .then((response)=>{
+        console.log(response);
+      })
+      .catch((error)=> {
+        console.log(error);
+      })
+      }
+    }
 
     render() {
 
       const each_movie = this.state.searchResult.map((movie, index)=>{
-        console.log(movie.title);
-        return <Movie key={index} title={movie.title} inLibrary={false}/>
+        console.log(movie);
+        return <Movie key={index} title={movie.title} overview={movie.overview}
+        release_date={movie.release_date} image={movie.image_url}
+        external_id={movie.external_id}  inLibrary={false} callbackaddMovieToLibrary={this.addMovieToLibrary}/>
       })
 
       return (
