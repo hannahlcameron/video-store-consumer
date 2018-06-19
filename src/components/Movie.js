@@ -16,7 +16,7 @@ class Movie extends Component {
   }
 
   onClickMovie=(event)=> {
-    this.props.callbackgetSelectedMovie(event.target.name);
+    this.props.callbackgetSelectedMovie(event.target);
   }
 
   onAddMovie =(event) => {
@@ -35,7 +35,7 @@ class Movie extends Component {
 
 let button = "";
 if (this.props.inLibrary) {
-  button = <button onClick={this.onClickMovie} name={this.props.title}>Select Movie</button>
+  button = <button onClick={this.onClickMovie} name={this.props.title} id={this.props.id}>Select Movie</button>
 }
 else {
   button = <button onClick={this.onAddMovie} name={this.props.title}>Add to library</button>

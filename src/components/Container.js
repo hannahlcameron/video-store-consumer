@@ -13,13 +13,16 @@ class Container extends Component {
     this.state = {
       selectedCustomerName:'none',
       selectedCustomerId: "none",
-      selectedMovie: 'none'
+      selectedMovieTitle: 'none',
+      selectedMovieId: "none"
     }
   }
 
-  getSelectedMovie = (title)=> {
+  getSelectedMovie = (movie)=> {
+    console.log(movie);
     this.setState({
-      selectedMovie: title
+      selectedMovieTitle: movie.name,
+      selectedMovieId: movie.id
     })
   }
 
@@ -31,13 +34,19 @@ class Container extends Component {
   }
 
   makeRental = (event) => {
-    axios.post(URL+"/rentals/"+this.state.selectedMovie+"/check-out", {
-      title: this.state.selectedMovie,
+
+
+    let date = new Date();
+    date.setDate(date.getDate() + 7);
+
+    console.log(event);
+    axios.post(URL+"rentals/"+this.state.selectedMovieTitle+"/check-out", {
+      title: this.state.selectedMovieTitle,
       customer_id: this.state.selectedCustomerId,
-      due_date: Date.now() + 7
+      due_date: date
     })
     .then((response)=>{
-      
+      console.log(response);
     })
 
   }
@@ -48,39 +57,39 @@ class Container extends Component {
     return (
       <Router>
       <div>
-        <h1>Selected Customer {this.state.selectedCustomerName}</h1>
-        <h1>Selected Movie {this.state.selectedMovie}</h1>
-        <button onClick={this.makeRental}>Check out new Rental</button>
-        <ul>
-        <li>
-          <Link to="/">Home</Link>
-        </li>
-        <li>
-          <Link to="/search">Search</Link>
-        </li>
-          <li>
-            <Link to="/library">Library</Link>
-          </li>
-          <li>
-            <Link to="/customers">Customers</Link>
-          </li>
+      <h1>Selected Customer {this.state.selectedCustomerName}</h1>
+      <h1>Selected Movie {this.state.selectedMovieTitle}</h1>
+      <button onClick={this.makeRental}>Check out new Rental</button>
+      <ul>
+      <li>
+      <Link to="/">Home</Link>
+      </li>
+      <li>
+      <Link to="/search">Search</Link>
+      </li>
+      <li>
+      <Link to="/library">Library</Link>
+      </li>
+      <li>
+      <Link to="/customers">Customers</Link>
+      </li>
 
-        </ul>
+      </ul>
 
-        <hr />
+      <hr />
 
 
-        <Route exact path="/search" component={SearchForm} />
-        <Route exact path="/library" render={props => <MovieCollection
-          callbackgetSelectedMovie = {this.getSelectedMovie} />} />
+      <Route exact path="/search" component={SearchForm} />
+      <Route exact path="/library" render={props => <MovieCollection
+        callbackgetSelectedMovie = {this.getSelectedMovie} />} />
         <Route path="/customers" render={props => <CustomerCollection
           callbackgetSelectedCustomer = {this.getSelectedCustomer} />} />
 
-      </div>
-    </Router>
-    );
-  }
-}
+          </div>
+          </Router>
+        );
+      }
+    }
 
 
-export default Container;
+    export default Container;

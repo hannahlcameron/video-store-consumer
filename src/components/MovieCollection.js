@@ -35,14 +35,14 @@ class MovieCollection extends Component {
     })
   }
 
-  selectedMoviebridge = (title) => {
-    this.props.callbackgetSelectedMovie(title);
+  selectedMoviebridge = (movie) => {
+    this.props.callbackgetSelectedMovie(movie);
   }
 
 
   render() {
     const each_movie = this.state.movies.map((movie, index)=>{
-      return <Movie key={index} title={movie.title} callbackgetSelectedMovie={this.selectedMoviebridge} inLibrary={true}/>
+      return <Movie key={index} title={movie.title} id={movie.id} callbackgetSelectedMovie={this.selectedMoviebridge} inLibrary={true}/>
     })
 
     return (
