@@ -42,7 +42,10 @@ class CustomerCollection extends Component {
 
     return (
       <div>
+      <h1> CUSTOMERS </h1>
+      <ul>
       {each_customer}
+      </ul>
       </div>
     );
   }

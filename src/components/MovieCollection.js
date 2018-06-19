@@ -42,7 +42,10 @@ class MovieCollection extends Component {
 
     return (
       <div>
+      <h1> MOVIES </h1>
+      <ul>
       {each_movie}
+      </ul>
       </div>
     );
   }

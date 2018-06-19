@@ -1,16 +1,19 @@
 import React, { Component } from 'react';
 import PropTypes from 'prop-types';
-import axios from 'axios';
+
 
 
 class Movie extends Component {
+  static propTypes = {
+    title: PropTypes.string.isRequired
+  }
 
 
   render() {
     return (
-      <p>
+      <li>
       {this.props.title}
-      </p>
+      </li>
     );
   }
 }
