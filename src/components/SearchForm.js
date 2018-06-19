@@ -9,7 +9,11 @@ class SearchForm extends Component {
   // }
   render() {
     return (
-      'im in search'
+      <form  >
+            <label htmlFor='query' className="new-card-form__form-label">Search for:</label>
+            <textarea name='query'/>
+            <button type="submit" className="new-card-form__form-button">Submit</button>
+          </form>
     );
   }
 }
