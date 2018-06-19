@@ -14,7 +14,8 @@ class CustomerCollection extends Component {
   constructor(){
     super();
     this.state= {
-      customers: []
+      customers: [],
+      selectedCustomer: 'none'
     }
   }
 
@@ -34,14 +35,21 @@ class CustomerCollection extends Component {
       console.log(error);
     })
   }
+
+  getSelectedCustomer = (name) => {
+    this.setState({
+      selectedCustomer: name
+    })
+  }
   render() {
     const each_customer = this.state.customers.map((customer, index)=>{
       console.log(customer.name);
-      return <Customer key={index} name={customer.name}/>
+      return <Customer key={index} name={customer.name} callbackgetSelectedCustomer={this.getSelectedCustomer}/>
     })
 
     return (
       <div>
+      <h1>Selected Customer {this.state.selectedCustomer}</h1>
       <h1> CUSTOMERS </h1>
       <ul>
       {each_customer}
