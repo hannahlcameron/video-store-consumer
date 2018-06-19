@@ -7,15 +7,14 @@ const URL = 'http://localhost:3000/';
 
 
 class MovieCollection extends Component {
-  // static propTypes = {
-  //   movies:PropTypes.array.isRequired,
-  // }
+  static propTypes = {
+    callbackgetSelectedMovie:PropTypes.func.isRequired,
+  }
 
   constructor(){
     super();
     this.state= {
       movies: [],
-      selectedMovie: 'none'
     }
   }
 
@@ -36,20 +35,20 @@ class MovieCollection extends Component {
     })
   }
 
-  getSelectedMovie = (title)=> {
-    this.setState({
-      selectedMovie: title
-    })
+  selectedMoviebridge = (title) => {
+    this.props.callbackgetSelectedMovie(title);
   }
+
+
   render() {
     const each_movie = this.state.movies.map((movie, index)=>{
       console.log(movie.title);
-      return <Movie key={index} title={movie.title} callbackgetSelectedMovie={this.getSelectedMovie}/>
+      return <Movie key={index} title={movie.title} callbackgetSelectedMovie={this.selectedMoviebridge}/>
     })
 
     return (
       <div>
-      <h1>Selected Movie {this.state.selectedMovie}</h1>
+
       <h1> MOVIES </h1>
       <ul>
       {each_movie}

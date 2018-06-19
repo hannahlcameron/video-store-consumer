@@ -53,7 +53,8 @@ class Container extends Component {
 
 
         <Route exact path="/search" component={SearchForm} />
-        <Route exact path="/library" component={MovieCollection} />
+        <Route exact path="/library" render={props => <MovieCollection
+          callbackgetSelectedMovie = {this.getSelectedMovie} />} />
         <Route path="/customers" render={props => <CustomerCollection
           callbackgetSelectedCustomer = {this.getSelectedCustomer} />} />
 
