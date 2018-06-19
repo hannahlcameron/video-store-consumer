@@ -43,11 +43,7 @@ class SearchForm extends Component {
     }
 
     addMovieToLibrary = (params)=> {
-      axios.request({
-        url: `${URL}/movies`,
-        methods: 'post',
-        params: params,
-      })
+      axios.post(`${URL}movies`, params)
       .then((response)=>{
         console.log(response);
       })
@@ -55,7 +51,7 @@ class SearchForm extends Component {
         console.log(error);
       })
       }
-    }
+
 
     render() {
 
