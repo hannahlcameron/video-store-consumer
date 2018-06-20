@@ -9,6 +9,7 @@ const URL = 'http://localhost:3000/';
 class MovieCollection extends Component {
   static propTypes = {
     callbackgetSelectedMovie:PropTypes.func.isRequired,
+    callbackUpdateStatus: PropTypes.func.isRequired
   }
 
   constructor(){
@@ -19,10 +20,11 @@ class MovieCollection extends Component {
   }
 
   componentDidMount(){
-
+    this.props.callbackUpdateStatus('Loading movies','success')
     axios.get(`${URL}/movies`)
     .then((response) => {
       console.log(response.data);
+      this.props.callbackUpdateStatus(`Successfully loaded ${response.data.length} movies`, 'success')
 
       const all_movies = response.data;
 
@@ -31,7 +33,7 @@ class MovieCollection extends Component {
       })
     })
     .catch((error)=> {
-      console.log(error);
+      this.props.callbackUpdateStatus(error.message,'error');
     })
   }
 
@@ -42,7 +44,8 @@ class MovieCollection extends Component {
 
   render() {
     const each_movie = this.state.movies.map((movie, index)=>{
-      return <Movie key={index} title={movie.title} id={movie.id} callbackgetSelectedMovie={this.selectedMoviebridge} inLibrary={true}/>
+      return <Movie key={index} title={movie.title} id={movie.id}
+      callbackgetSelectedMovie={this.selectedMoviebridge} inLibrary={true}/>
     })
 
     return (

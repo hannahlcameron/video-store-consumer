@@ -6,9 +6,9 @@ import Movie from "./Movie";
 const URL = 'http://localhost:3000/';
 
 class SearchForm extends Component {
-  // static propTypes = {
-  //   name: PropTypes.string.isRequired
-  // }
+  static propTypes = {
+    callbackUpdateStatus: PropTypes.func.isRequired
+  }
 
   constructor(){
     super();
@@ -20,10 +20,11 @@ class SearchForm extends Component {
 
   searchForResults = (submit) =>{
     submit.preventDefault();
+    this.props.callbackUpdateStatus(`Searching for movies that match: ${this.state.query} `,'success')
     axios.get(`${URL}/movies?query=${this.state.query}`)
     .then((response) => {
       console.log(response.data);
-
+      this.props.callbackUpdateStatus(`Successfully loaded ${response.data.length} movies`, 'success')
       const results = response.data;
 
       this.setState({
@@ -31,7 +32,7 @@ class SearchForm extends Component {
       })
     })
     .catch((error)=> {
-      console.log(error);
+      this.props.callbackUpdateStatus(error.message,'error');
     })}
 
     onInputChange = (event) => {
@@ -43,12 +44,14 @@ class SearchForm extends Component {
     }
 
     addMovieToLibrary = (params)=> {
+      this.props.callbackUpdateStatus(`Adding movie ${params.title} to library `,'success')
       axios.post(`${URL}movies`, params)
       .then((response)=>{
         console.log(response);
+        this.props.callbackUpdateStatus(`Successfully added ${params.title} to library`, 'success')
       })
       .catch((error)=> {
-        console.log(error);
+        this.props.callbackUpdateStatus(error.message,'error');
       })
       }
 
