@@ -1,0 +1,36 @@
+.nav {
+  display: flex;
+  flex-flow: row;
+
+}
+.nav li {
+  margin: 5px;
+  border-left: solid 2px #aaa;
+padding-left: 5px;
+}
+
+.nav li:last-child {
+  border-right: solid 2px #aaa;
+  padding-right: 5px;
+}
+
+.top-bar {
+  display: grid;
+  grid-template-rows: 1fr 4fr 2fr 2fr;
+}
+
+.status {
+  grid-row: 1 / 2;
+}
+
+.nav {
+justify-content: space-around;
+  grid-row: 2 / 3;
+}
+.selection {
+    display: flex;
+  grid-row: 3 / 4;
+}
+.selection-button {
+  grid-row: 4 / 5
+}
