@@ -2,13 +2,14 @@ import React, { Component } from 'react';
 import PropTypes from 'prop-types';
 import axios from "axios";
 import Movie from "./Movie";
+import "./SearchForm.css";
 
 const URL = 'http://localhost:3000/';
 
 class SearchForm extends Component {
-  // static propTypes = {
-  //   name: PropTypes.string.isRequired
-  // }
+  static propTypes = {
+    callbackUpdateStatus: PropTypes.func.isRequired
+  }
 
   constructor(){
     super();
@@ -20,10 +21,11 @@ class SearchForm extends Component {
 
   searchForResults = (submit) =>{
     submit.preventDefault();
+    this.props.callbackUpdateStatus(`Searching for movies that match: ${this.state.query} `,'success')
     axios.get(`${URL}/movies?query=${this.state.query}`)
     .then((response) => {
       console.log(response.data);
-
+      this.props.callbackUpdateStatus(`Successfully loaded ${response.data.length} movies`, 'success')
       const results = response.data;
 
       this.setState({
@@ -31,7 +33,7 @@ class SearchForm extends Component {
       })
     })
     .catch((error)=> {
-      console.log(error);
+      this.props.callbackUpdateStatus(error.message,'error');
     })}
 
     onInputChange = (event) => {
@@ -43,12 +45,16 @@ class SearchForm extends Component {
     }
 
     addMovieToLibrary = (params)=> {
+      this.props.callbackUpdateStatus(`Adding movie ${params.title} to library `,'success')
+      console.log("params to be sentin search form:");
+      console.log(params);
       axios.post(`${URL}movies`, params)
       .then((response)=>{
         console.log(response);
+        this.props.callbackUpdateStatus(`Successfully added ${params.title} to library`, 'success')
       })
       .catch((error)=> {
-        console.log(error);
+        this.props.callbackUpdateStatus(error.message,'error');
       })
       }
 
@@ -59,7 +65,7 @@ class SearchForm extends Component {
         console.log(movie);
         return <Movie key={index} title={movie.title} overview={movie.overview}
         release_date={movie.release_date} image={movie.image_url}
-        external_id={movie.external_id}  inLibrary={false} callbackaddMovieToLibrary={this.addMovieToLibrary}/>
+        externalId={movie.external_id}  inLibrary={false} callbackaddMovieToLibrary={this.addMovieToLibrary}/>
       })
 
       return (
@@ -72,7 +78,7 @@ class SearchForm extends Component {
             onChange={this.onInputChange}/>
             <button type="submit" className="new-card-form__form-button">Submit</button>
             </form>
-            <ul>
+            <ul className="movies">
             {each_movie}
             </ul>
         </div>

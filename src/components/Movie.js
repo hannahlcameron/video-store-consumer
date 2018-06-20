@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import PropTypes from 'prop-types';
+import "./Movie.css"
 
 
 
@@ -21,6 +22,8 @@ class Movie extends Component {
 
   onAddMovie =(event) => {
     event.preventDefault();
+    console.log("creating the params the external id:");
+    console.log(this.props.externalId);
     this.props.callbackaddMovieToLibrary({
       title: this.props.title,
       overview: this.props.overview,
@@ -35,15 +38,18 @@ class Movie extends Component {
 
 let button = "";
 if (this.props.inLibrary) {
-  button = <button onClick={this.onClickMovie} name={this.props.title} id={this.props.id}>Select Movie</button>
+  button = <button onClick={this.onClickMovie} name={this.props.title} id={this.props.id} className="add-button">Select Movie</button>
 }
 else {
-  button = <button onClick={this.onAddMovie} name={this.props.title}>Add to library</button>
+  button = <button onClick={this.onAddMovie} name={this.props.title} className="add-button">Add to library</button>
 }
 
     return (
-      <li >
-      {this.props.title}
+      <li className="movie-container">
+      <h3 className="title">{this.props.title}</h3>
+      <img src={this.props.image} alt={`cover art for ${this.props.title}`} className="image"/>
+      <p className="release-date">{this.props.release_date}</p>
+      <p className="overview">{this.props.overview}</p>
       {button}
       </li>
     );

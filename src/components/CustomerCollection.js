@@ -9,6 +9,7 @@ const URL = 'http://localhost:3000/';
 class CustomerCollection extends Component {
   static propTypes = {
     callbackgetSelectedCustomer:PropTypes.func.isRequired,
+    callbackUpdateStatus:PropTypes.func.isRequired,
   }
 
   constructor(){
@@ -19,10 +20,11 @@ class CustomerCollection extends Component {
   }
 
   componentDidMount(){
-
+    this.props.callbackUpdateStatus('Loading customers','success')
     axios.get(`${URL}/customers`)
     .then((response) => {
       console.log(response.data);
+      this.props.callbackUpdateStatus(`Successfully loaded ${response.data.length} customers`, 'success')
 
       const all_customers = response.data;
 
@@ -31,7 +33,7 @@ class CustomerCollection extends Component {
       })
     })
     .catch((error)=> {
-      console.log(error);
+      this.props.callbackUpdateStatus(error.message,'error');
     })
   }
 
@@ -42,7 +44,8 @@ class CustomerCollection extends Component {
   render() {
 
     const each_customer = this.state.customers.map((customer, index)=>{
-      return <Customer key={index} name={customer.name} id={customer.id} callbackgetSelectedCustomer={this.selectedCustomerbridge}/>
+      return <Customer key={index} name={customer.name} id={customer.id}
+      callbackgetSelectedCustomer={this.selectedCustomerbridge}/>
     })
 
     return (

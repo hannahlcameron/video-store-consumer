@@ -1,7 +1,8 @@
 import React, { Component } from 'react';
 import PropTypes from 'prop-types';
 import axios from "axios";
-import Movie from "./Movie"
+import Movie from "./Movie";
+import "./MovieCollection.css"
 
 const URL = 'http://localhost:3000/';
 
@@ -9,6 +10,7 @@ const URL = 'http://localhost:3000/';
 class MovieCollection extends Component {
   static propTypes = {
     callbackgetSelectedMovie:PropTypes.func.isRequired,
+    callbackUpdateStatus: PropTypes.func.isRequired
   }
 
   constructor(){
@@ -19,10 +21,11 @@ class MovieCollection extends Component {
   }
 
   componentDidMount(){
-
+    this.props.callbackUpdateStatus('Loading movies','success')
     axios.get(`${URL}/movies`)
     .then((response) => {
       console.log(response.data);
+      this.props.callbackUpdateStatus(`Successfully loaded ${response.data.length} movies`, 'success')
 
       const all_movies = response.data;
 
@@ -31,7 +34,7 @@ class MovieCollection extends Component {
       })
     })
     .catch((error)=> {
-      console.log(error);
+      this.props.callbackUpdateStatus(error.message,'error');
     })
   }
 
@@ -42,14 +45,15 @@ class MovieCollection extends Component {
 
   render() {
     const each_movie = this.state.movies.map((movie, index)=>{
-      return <Movie key={index} title={movie.title} id={movie.id} callbackgetSelectedMovie={this.selectedMoviebridge} inLibrary={true}/>
+      return <Movie key={index} title={movie.title} id={movie.id} release_date={movie.release_date} overview={movie.overview} image = {movie.image_url}
+      callbackgetSelectedMovie={this.selectedMoviebridge} inLibrary={true}/>
     })
 
     return (
       <div>
 
       <h1> MOVIES </h1>
-      <ul>
+      <ul className="movies">
       {each_movie}
       </ul>
       </div>

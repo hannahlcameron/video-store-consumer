@@ -1,0 +1,5 @@
+.movies {
+  display: inline-flex;
+  width: 100vw;
+  overflow-y: scroll;
+}
