@@ -38,7 +38,8 @@ class Movie extends Component {
 
 let button = "";
 if (this.props.inLibrary) {
-  button = <button onClick={this.onClickMovie} name={this.props.title} id={this.props.id} className="add-button">Select Movie</button>
+  button = <button onClick={this.onClickMovie} name={this.props.title}
+  id={this.props.id} className="add-button">Select Movie</button>
 }
 else {
   button = <button onClick={this.onAddMovie} name={this.props.title} className="add-button">Add to library</button>

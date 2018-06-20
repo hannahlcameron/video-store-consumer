@@ -71,12 +71,12 @@ class SearchForm extends Component {
       return (
         <div>
           <form onSubmit={this.searchForResults} >
-            <label htmlFor='query' className="new-card-form__form-label">Search for:</label>
+            <label htmlFor='query' className="new-card-form__form-label"></label>
             <textarea
             name='query'
             value= {this.state.query}
             onChange={this.onInputChange}/>
-            <button type="submit" className="new-card-form__form-button">Submit</button>
+            <button type="submit" className="new-card-form__form-button">Search</button>
             </form>
             <ul className="movies">
             {each_movie}
