@@ -78,7 +78,7 @@ class SearchForm extends Component {
             onChange={this.onInputChange}/>
             <button type="submit" className="new-card-form__form-button">Submit</button>
             </form>
-            <ul>
+            <ul className="movies">
             {each_movie}
             </ul>
         </div>

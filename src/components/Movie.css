@@ -5,8 +5,8 @@
   grid-template-rows: repeat(5, 1fr);
   height: 40vw;
   width: 30.5vw;
-  border: solid 1em #aaa;
-  margin: 0;
+  border: solid 3px #aaa;
+  margin: 3em;
 }
 
 .movie-container:hover {
