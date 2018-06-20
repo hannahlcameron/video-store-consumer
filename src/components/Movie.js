@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import PropTypes from 'prop-types';
+import "./Movie.css"
 
 
 
@@ -42,8 +43,11 @@ else {
 }
 
     return (
-      <li >
+      <li className="movie-container">
       {this.props.title}
+      <img src={this.props.image} alt={`cover art for ${this.props.title}`}/>
+      {this.props.release_date}
+      {this.props.overview}
       {button}
       </li>
     );
