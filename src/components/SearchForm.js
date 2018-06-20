@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import PropTypes from 'prop-types';
 import axios from "axios";
 import Movie from "./Movie";
+import "./SearchForm.css";
 
 const URL = 'http://localhost:3000/';
 
@@ -45,6 +46,8 @@ class SearchForm extends Component {
 
     addMovieToLibrary = (params)=> {
       this.props.callbackUpdateStatus(`Adding movie ${params.title} to library `,'success')
+      console.log("params to be sentin search form:");
+      console.log(params);
       axios.post(`${URL}movies`, params)
       .then((response)=>{
         console.log(response);
@@ -62,7 +65,7 @@ class SearchForm extends Component {
         console.log(movie);
         return <Movie key={index} title={movie.title} overview={movie.overview}
         release_date={movie.release_date} image={movie.image_url}
-        external_id={movie.external_id}  inLibrary={false} callbackaddMovieToLibrary={this.addMovieToLibrary}/>
+        externalId={movie.external_id}  inLibrary={false} callbackaddMovieToLibrary={this.addMovieToLibrary}/>
       })
 
       return (

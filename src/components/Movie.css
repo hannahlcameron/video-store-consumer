@@ -1,7 +1,17 @@
 .movie-container {
+
   display: grid;
   grid-template-columns: 1fr 1fr;
   grid-template-rows: repeat(5, 1fr);
+  height: 40vw;
+  width: 30.5vw;
+  border: solid 1em #aaa;
+  margin: 0;
+}
+
+.movie-container:hover {
+  height: 50vw;
+  width: 40vw;
 }
 
 .image {

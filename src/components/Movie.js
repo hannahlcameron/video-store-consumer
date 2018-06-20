@@ -22,6 +22,8 @@ class Movie extends Component {
 
   onAddMovie =(event) => {
     event.preventDefault();
+    console.log("creating the params the external id:");
+    console.log(this.props.externalId);
     this.props.callbackaddMovieToLibrary({
       title: this.props.title,
       overview: this.props.overview,

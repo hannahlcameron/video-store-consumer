@@ -1,7 +1,8 @@
 import React, { Component } from 'react';
 import PropTypes from 'prop-types';
 import axios from "axios";
-import Movie from "./Movie"
+import Movie from "./Movie";
+import "./MovieCollection.css"
 
 const URL = 'http://localhost:3000/';
 
@@ -52,7 +53,7 @@ class MovieCollection extends Component {
       <div>
 
       <h1> MOVIES </h1>
-      <ul>
+      <ul className="movies">
       {each_movie}
       </ul>
       </div>

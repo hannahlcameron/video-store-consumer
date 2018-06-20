@@ -5,6 +5,7 @@ import SearchForm from './SearchForm'
 import { BrowserRouter as Router, Route, Link, Props } from "react-router-dom";
 import axios from "axios";
 import Status from './Status'
+import "./Container.css"
 
 const URL = 'http://localhost:3000/';
 
