@@ -3,16 +3,16 @@
   display: grid;
   grid-template-columns: 1fr 1fr;
   grid-template-rows: repeat(5, 1fr);
-  height: 40vw;
-  width: 30.5vw;
+  height: 30vw;
+  width: 30vw;
   border: solid 3px #aaa;
   margin: 3em;
 }
 
-.movie-container:hover {
+/* .movie-container:hover {
   height: 50vw;
   width: 40vw;
-}
+} */
 
 .image {
   grid-column: 1 / 2;
@@ -22,6 +22,7 @@
 .add-button {
   grid-column: 2 / 3;
   grid-row: 1 / 2;
+  min-width: 10vw
 
 }
 

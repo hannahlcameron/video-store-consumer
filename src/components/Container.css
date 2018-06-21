@@ -16,7 +16,7 @@ padding-left: 5px;
 
 .top-bar {
   display: grid;
-  grid-template-rows: 1fr 4fr 2fr 2fr;
+  grid-template-rows: 1fr 2fr 2fr 2fr;
 }
 
 .status {
