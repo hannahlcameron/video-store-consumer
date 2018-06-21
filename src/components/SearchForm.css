@@ -1,0 +1,20 @@
+
+.search-box{
+
+}
+textarea {
+  background-color: #ffffe6;
+}
+
+.fa.fa-search{
+
+  width: 10%;
+  padding: 10px;
+  background: #1aa79a;
+  color: white;
+  font-size: 17px;
+  border: 1px solid grey;
+  border-left: none;
+  cursor: pointer;
+
+}

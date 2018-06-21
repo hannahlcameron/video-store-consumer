@@ -1,0 +1,19 @@
+li {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  font-size: 1.2em
+
+}
+
+.customer-button {
+  margin-left: 5%;
+  max-width: 50%;
+  border-radius: 10px;
+  background-color: #f0f3f4;
+  color: #415058
+}
+
+.customer-button:hover {
+  background-color: #1aa79a;
+  color: white
+}

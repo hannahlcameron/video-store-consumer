@@ -18,7 +18,8 @@ class Customer extends Component {
     return (
       <li>
       {this.props.name}
-        <button onClick={this.onClickCustomer} name={this.props.name} id={this.props.id}>Select Customer</button>
+        <button onClick={this.onClickCustomer} name={this.props.name} id={this.props.id}
+        className="customer-button">Select for Rental</button>
       </li>
     );
   }
