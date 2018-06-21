@@ -1,12 +1,10 @@
 .movie-container {
-
   display: grid;
   grid-template-columns: 1fr 1fr;
   grid-template-rows: repeat(5, 1fr);
-  height: 30vw;
-  width: 30vw;
+  /* height: 100%; */
   border: solid 3px #aaa;
-  margin: 3em;
+  margin: .5em;
 }
 
 /* .movie-container:hover {
@@ -26,13 +24,14 @@
 .add-button {
   grid-column: 2 / 3;
   grid-row: 1 / 2;
-  min-width: 10vw
-
+  min-width: 10vw;
+  max-height: 20%;
 }
 
 .title {
   grid-column: 2/3;
   grid-row: 2/ 3;
+  max-height: 30%;
 }
 
 .release-date {

@@ -51,12 +51,11 @@ class MovieCollection extends Component {
     })
 
     return (
-      <div>
-
-      <h1> Movies </h1>
-      <ul className="movies">
-      {each_movie}
-      </ul>
+      <div className="movie-collection">
+        <h3> Movies </h3>
+        <ul className="movies">
+          {each_movie}
+        </ul>
       </div>
     );
   }

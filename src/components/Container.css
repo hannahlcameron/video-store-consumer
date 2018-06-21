@@ -1,10 +1,17 @@
+
+.top-bar {
+  display: grid;
+  grid-template-rows: 1fr 2fr 2fr 2fr;
+  /* height: 100%; */
+}
+
 .nav {
   display: grid;
   grid-template-columns: repeat(4,1fr);
   align-items:center;
   padding-left: 10%;
-  padding-right: 10%
-
+  padding-right: 10%;
+  /* height: 100%; */
 
 }
 .nav li {
@@ -13,7 +20,7 @@
   text-decoration: none;
   font-size: 1.3em;
   text-transform: uppercase;
-  padding-left: 25%
+  padding-left: 25%;
 
 }
 
@@ -33,19 +40,15 @@
 
 }
 
-.top-bar {
-  display: grid;
-  grid-template-rows: 1fr 2fr 2fr 2fr;
-
-}
-
 .status {
   grid-row: 1 / 2;
+  /* height: 100%; */
 }
 
 .nav {
   justify-content: space-around;
   grid-row: 2 / 3;
+  /* height: 100%; */
 }
 
 .selection {
@@ -53,7 +56,8 @@
   grid-template-columns: 1fr 1fr;
   grid-row: 3 / 4;
   padding-left: 20%;
-  padding-right: 20%
+  padding-right: 20%;
+  /* height: 100%; */
 }
 
 .selection h3 {
@@ -65,11 +69,10 @@
   font-weight: bold;
   font-size: 1.3em
 }
-.selection-button {
-  grid-row: 4 / 5;
-}
 
 .rental-button {
+  grid-row: 4 / 5;
+  /* height: 100%; */
   margin-left: 40%;
   margin-right: 40%;
   font-family: 'Dosis', sans-serif;
@@ -83,3 +86,7 @@
   background-color: #1aa79a;
   color: white
 }
+
+/* .display {
+  height: 100%;
+} */
