@@ -53,7 +53,7 @@ class MovieCollection extends Component {
     return (
       <div>
 
-      <h1> MOVIES </h1>
+      <h1> Movies </h1>
       <ul className="movies">
       {each_movie}
       </ul>

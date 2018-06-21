@@ -86,8 +86,8 @@ class Container extends Component {
 
 
               <div className="selection">
-                <h1>Selected Customer {this.state.selectedCustomerName}</h1>
-                <h1>Selected Movie {this.state.selectedMovieTitle}</h1>
+                <h3>Selected Customer: <span>{this.state.selectedCustomerName}</span></h3>
+                <h3>Selected Movie: <span>{this.state.selectedMovieTitle}</span></h3>
               </div>
               <button onClick={this.makeRental} className="rental-button">Check out new Rental</button>
               <ul className="nav">

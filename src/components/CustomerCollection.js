@@ -51,9 +51,9 @@ class CustomerCollection extends Component {
     return (
       <div>
 
-      <h1> CUSTOMERS </h1>
+      <h1> Customers </h1>
       <ul>
-      {each_customer}
+      <li>{each_customer}</li>
       </ul>
       </div>
     );
