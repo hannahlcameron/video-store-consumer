@@ -51,10 +51,10 @@ class CustomerCollection extends Component {
     return (
       <div className="container-child">
 
-      <h1> Customers </h1>
-      <ul>
-      <li>{each_customer}</li>
-      </ul>
+        <h1> Customers </h1>
+          <ul>
+            <li>{each_customer}</li>
+          </ul>
       </div>
     );
   }

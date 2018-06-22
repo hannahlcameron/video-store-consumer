@@ -6,13 +6,18 @@ import Container from './components/Container'
 class App extends Component {
   render() {
     return (
-      <div className="App">
-        <header className="App-header">
+      <div className="App" id="overall">
+        <header className="header">
           <p className="App-title">V i d e O c t o</p>
         </header>
         <Container />
-        <footer className="App-footer"> VideOcto, 2018
-          <p>Hannah,Brenda,Wini</p>
+        <footer >
+        <ul className="footer">
+          <li>@VideOcto, 2018</li>
+          <li>Hannah</li>
+          <li>Brenda</li>
+          <li>Wini</li>
+        </ul>
         </footer>
 
       </div>

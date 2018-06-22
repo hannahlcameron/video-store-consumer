@@ -4,20 +4,36 @@
   display: grid;
   grid-template-rows: 1fr 8.5fr 0.5fr;
   height: 100vh;
+  color: #415058;
 
 }
 
 
-.App-header {
+.header {
   background-color: #1aa79a;
-  max-height: 10vh;
+  /* height: 100%; */
   padding-top: 0px;
   color: white;
   border: solid #1aa79a;
+  grid-row: 1 / 2;
+}
+
+.main {
+  /* height: 100%; */
+  grid-row: 2 / 3;
+  display: grid;
+  grid-template-rows: 3fr 5fr;
+}
+
+.footer {
+  display: grid;
+  grid-template-columns: 2fr 1fr 1fr 1fr;
+  margin-top: 0;
+  margin-bottom: 5px;
 }
 
 .App-title {
-  font-size: 2em;
+  font-size: 2.5em;
   align-content: center;
   padding-bottom: 2px;
 }

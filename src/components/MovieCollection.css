@@ -1,14 +1,19 @@
 .movie-collection {
+
   display: grid;
   grid-template-rows: 1fr 5fr;
 
 }
 
+.movie-collection h1 {
+  align-self: center;
+}
 
 .movies {
   grid-row: 2 / 3;
   display: inline-flex;
   width: 100vw;
   overflow-y: scroll;
+  margin-top: 0;
 
 }

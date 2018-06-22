@@ -12,7 +12,7 @@ class Status extends React.Component {
   render() {
 
     return (
-      <section className={`status ${this.props.type}`}>
+      <section className={`${this.props.type}`}>
         {this.props.message}
       </section>
     );

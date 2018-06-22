@@ -51,6 +51,7 @@ class MovieCollection extends Component {
     })
 
     return (
+
       <div className="movie-collection container-child">
 
         <h1> Movies </h1>

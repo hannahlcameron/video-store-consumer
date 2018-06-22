@@ -1,3 +1,4 @@
+
 .container-info {
   display: grid;
   grid-template-rows: 1fr 2fr;
@@ -5,6 +6,8 @@
 
 .top-bar {
   border-bottom: solid 2px #aaa;
+  display: grid;
+  grid-template-rows: 0.5fr 1.5fr 1fr 0.5fr;
 }
 
 .nav {
@@ -13,16 +16,20 @@
   align-items:center;
   padding-left: 10%;
   padding-right: 10%;
+  justify-content: space-around;
 }
 
 .nav li {
   margin: 5px;
   border-left: solid 2px #aaa;
   text-decoration: none;
-  font-size: 1.5em;
+  font-size: 1.8em;
   text-transform: uppercase;
   padding-left: 25%;
   padding-right:25%;
+}
+.nav li:last-child {
+  border-right: solid 2px #aaa;
 
 }
 
@@ -37,36 +44,32 @@
   color: #1aa79a
 }
 
-.nav li:last-child {
-  border-right: solid 2px #aaa;
 
-}
-
-.top-bar {
-  display: grid;
-  grid-template-rows: 1fr 2fr 2fr 1fr;
-
-}
 
 .status {
+
   grid-row: 1 / 2;
 }
 
-.nav {
-  justify-content: space-around;
-  grid-row: 2 / 3;
-}
+
 
 .selection {
   display: grid;
   grid-template-columns: 1fr 1fr;
   grid-row: 3 / 4;
-  padding-left: 10%;
-  padding-right: 10%
+  margin-left: 10%;
+  margin-right: 10%;
+
 }
 
 .selection h3 {
   color: #415058;
+  border: solid 2px #aaa;
+  margin-left: 10px;
+  margin-right: 10px;
+  align-self: center;
+  padding-top: 5px;
+  padding-bottom: 5px;
 }
 
 .selection span {
@@ -74,18 +77,17 @@
   font-weight: bold;
   font-size: 1.3em
 }
-.selection-button {
-  grid-row: 4 / 5;
-}
 
 .rental-button {
+  grid-row: 4 / 5;
   margin-left: 40%;
   margin-right: 40%;
   font-family: 'Dosis', sans-serif;
   font-size: 1.2em;
   border-radius: 20px;
   background-color: #f0f3f4;
-  color: #415058
+  color: #415058;
+  margin-bottom: 20px;
 }
 
 .rental-button:hover {
