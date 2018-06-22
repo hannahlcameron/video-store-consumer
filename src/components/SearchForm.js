@@ -71,14 +71,15 @@ class SearchForm extends Component {
       return (
         <div className="container-child">
           <form onSubmit={this.searchForResults} >
-            <label htmlFor='query' className="search-box"></label>
-            <textarea className="search-box"
-            name='query'
-            value= {this.state.query}
-            placeholder ="Search for a movie.."
-            onChange={this.onInputChange}/>
-            <button className="search" type="submit"><i className="fa fa-search"></i></button>
-            </form>
+            <div className="search-bar">
+              <textarea className="search-box"
+              name='query'
+              value= {this.state.query}
+              placeholder ="Search for a movie.."
+              onChange={this.onInputChange}/>
+              <button className="search" type="submit"><i className="fa fa-search"></i></button>
+            </div>
+          </form>
             <ul className="movies">
             {each_movie}
             </ul>

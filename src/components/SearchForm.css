@@ -1,32 +1,35 @@
 
 form {
-  display: flex;
+  display: grid;
   flex-direction:row;
-  margin-left: 42%;
-  padding-top: 2%
+  padding-top: 2%;
+}
 
+.search-bar {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  margin-bottom: 3%;
 }
 
 .search-box {
+
   background-color: #f1f1f1;
   text-align:left;
   border-color: grey;
   justify-content: center;
-  padding-top: 2%
+  width: 50vh;
+  border: 1px solid grey;
+  font-size: 1.3em;
+
 }
 
 .search {
-
   width: 9%;
-  padding: 10px;
   background: #1aa79a;
   color: white;
-  font-size: 20px;
-  border: 1px solid grey;
-  border-left: none;
   cursor: pointer;
-
-
+  border-color: grey;
 }
 
 i.fa.fa-search {

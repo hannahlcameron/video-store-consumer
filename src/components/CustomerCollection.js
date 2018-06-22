@@ -50,7 +50,6 @@ class CustomerCollection extends Component {
 
     return (
       <div className="customer-collection container-child">
-        <h1> Customers </h1>
         <ul className="customers">
           <li>{each_customer}</li>
         </ul>

@@ -31,7 +31,7 @@
   grid-template-columns: 2fr 1fr 1fr 1fr;
   margin-top: 0;
   margin-bottom: 5px;
-  border-top: solid 2px #aaa;
+  border-top: solid 1px rgb(219, 220, 222);
 }
 
 .App-title {
