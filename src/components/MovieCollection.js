@@ -54,6 +54,10 @@ class MovieCollection extends Component {
       <div>
 
       <h1> Movies </h1>
+      <i className="fa">&#xf0d9;</i>
+      <p></p>
+      <i className="fa">&#xf0da;</i>
+
       <ul className="movies">
       {each_movie}
       </ul>
