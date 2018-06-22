@@ -9,6 +9,8 @@
 
 .top-bar {
   border-bottom: solid 2px #aaa;
+  margin-left: 30px;
+  margin-right: 30px;
   display: grid;
   grid-template-rows: 0.5fr 1.5fr 1fr 0.5fr;
   min-width: 0;
@@ -35,6 +37,7 @@
   padding-right:25%;
 }
 .nav li:last-child {
+
   border-right: solid 2px #aaa;
 
 }
