@@ -47,10 +47,12 @@ else {
 
     return (
       <li className="movie-container">
-        <h3 className="title">{this.props.title}</h3>
+        <span className="title">{this.props.title}</span>
         <img src={this.props.image} alt={`cover art for ${this.props.title}`} className="image"/>
-        <p className="release-date">{this.props.release_date}</p>
-        <p className="overview">{this.props.overview}</p>
+        <span className="release-date">{this.props.release_date}</span>
+        <div className="overview">
+          <p>{this.props.overview}</p>
+        </div>
         {button}
       </li>
     );
