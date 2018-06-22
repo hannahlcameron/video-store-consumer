@@ -18,7 +18,7 @@ class Container extends Component {
       selectedMovieTitle: 'none',
       selectedMovieId: "none",
       status: {
-        message: 'loaded the page',
+        message: 'Loaded page',
         type: 'success'
       }
     }

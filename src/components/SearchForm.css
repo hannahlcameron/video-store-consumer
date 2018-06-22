@@ -1,22 +1,31 @@
 
-.search-box{
+form {
+  display: flex;
+  flex-direction:row;
+  margin-left: 42%;
+  padding-top: 2%
 
 }
 
-textarea {
-  background-color: #ffffe6;
+.search-box {
+  background-color: #f1f1f1;
+  text-align:left;
+  border-color: grey;
+  justify-content: center;
+  padding-top: 2%
 }
 
-.fa.fa-search {
+.search {
 
-  width: 10%;
+  width: 9%;
   padding: 10px;
   background: #1aa79a;
   color: white;
-  font-size: 17px;
+  font-size: 20px;
   border: 1px solid grey;
   border-left: none;
   cursor: pointer;
+
 
 }
 
