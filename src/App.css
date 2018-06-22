@@ -1,16 +1,31 @@
 .App {
   text-align: center;
   font-family: 'Dosis', sans-serif;
-
+  display: grid;
+  grid-template-rows: 1fr 8.5fr 0.5fr;
+  height: 100vh;
 }
 
 
-.App-header {
+.header {
   background-color: #1aa79a;
-  max-height: 10vh;
+  /* height: 100%; */
   padding-top: 0px;
   color: white;
   border: solid #1aa79a;
+  grid-row: 1 / 2;
+}
+
+.main {
+  /* height: 100%; */
+  grid-row: 2 / 3;
+  display: grid;
+  grid-template-rows: 3fr 5fr;
+}
+
+.footer {
+  /* height: 100%; */
+  grid-row: 3 / 4 ;
 }
 
 .App-title {

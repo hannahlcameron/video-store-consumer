@@ -1,7 +1,7 @@
 .status {
   display: block;
   width: 100%;
-  height: 5vh;
+  /* height: 100%; */
   font-style: italic;
   text-align:left;
 }

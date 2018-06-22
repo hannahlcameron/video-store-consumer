@@ -1,7 +1,16 @@
+.movie-collection {
+  /* height: 100% */
+}
+
 .movies {
   display: inline-flex;
   width: 100vw;
   overflow-y: scroll;
+  /* height: 90%; */
+}
+
+.movie-collection h3 {
+  /* height: 10%; */
 }
 
 .fa {

@@ -77,7 +77,7 @@ class Container extends Component {
         <main>
 
           <Router>
-            <div>
+            <div className="main">
             <nav className="top-bar">
               <Status
               message={this.state.status.message}
@@ -103,26 +103,21 @@ class Container extends Component {
                   <li>
                     <Link to="/customers">Customers</Link>
                   </li>
-
-              </ul>
-
-            </nav>
-
-        <hr />
-
-
-        <Route exact path="/search" render={props => <SearchForm
-          callbackUpdateStatus = {this.updateStatus} />}/>
-        <Route exact path="/library" render={props => <MovieCollection
-            callbackgetSelectedMovie = {this.getSelectedMovie}
-            callbackUpdateStatus = {this.updateStatus}  />} />
-        <Route path="/customers" render={props => <CustomerCollection
-              callbackgetSelectedCustomer = {this.getSelectedCustomer}
-              callbackUpdateStatus = {this.updateStatus} />} />
-
-              </div>
-        </Router>
-      </main>
+                </ul>
+              </nav>
+              <article className="display">
+                <Route exact path="/search" render={props => <SearchForm
+                  callbackUpdateStatus = {this.updateStatus} />}/>
+                <Route exact path="/library" render={props => <MovieCollection
+                  callbackgetSelectedMovie = {this.getSelectedMovie}
+                  callbackUpdateStatus = {this.updateStatus}  />} />
+                <Route path="/customers" render={props => <CustomerCollection
+                  callbackgetSelectedCustomer = {this.getSelectedCustomer}
+                  callbackUpdateStatus = {this.updateStatus} />} />
+              </article>
+            </div>
+          </Router>
+        </main>
             );
           }
         }
