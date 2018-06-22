@@ -69,7 +69,7 @@ class SearchForm extends Component {
       })
 
       return (
-        <div>
+        <div className="container-child">
           <form onSubmit={this.searchForResults} >
             <label htmlFor='query' className="search-box"></label>
             <textarea

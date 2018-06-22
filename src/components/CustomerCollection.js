@@ -49,7 +49,7 @@ class CustomerCollection extends Component {
     })
 
     return (
-      <div>
+      <div className="container-child">
 
       <h1> Customers </h1>
       <ul>

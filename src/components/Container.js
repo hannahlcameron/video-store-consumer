@@ -77,50 +77,49 @@ class Container extends Component {
         <main>
 
           <Router>
-            <div>
-            <nav className="top-bar">
-              <Status
-              message={this.state.status.message}
-              type={this.state.status.type}
-              className="status"/>
+            <div className="container-info">
+              <nav className="top-bar">
+                <Status
+                  message={this.state.status.message}
+                  type={this.state.status.type}
+                  className="status"/>
+
+                <ul className="nav">
+                    <li>
+                      <Link to="/">Home</Link>
+                    </li>
+                    <li>
+                      <Link to="/search">Search</Link>
+                    </li>
+                    <li>
+                      <Link to="/library">Library</Link>
+                    </li>
+                    <li>
+                      <Link to="/customers">Customers</Link>
+                    </li>
+                </ul>
+                <div className="selection">
+                  <h3>Selected Customer: <span>{this.state.selectedCustomerName}</span></h3>
+                  <h3>Selected Movie: <span>{this.state.selectedMovieTitle}</span></h3>
+                </div>
+                <button onClick={this.makeRental} className="rental-button">Check out new Rental</button>
 
 
-              <div className="selection">
-                <h3>Selected Customer: <span>{this.state.selectedCustomerName}</span></h3>
-                <h3>Selected Movie: <span>{this.state.selectedMovieTitle}</span></h3>
-              </div>
-              <button onClick={this.makeRental} className="rental-button">Check out new Rental</button>
-              <ul className="nav">
-                  <li>
-                    <Link to="/">Home</Link>
-                  </li>
-                  <li>
-                    <Link to="/search">Search</Link>
-                  </li>
-                  <li>
-                    <Link to="/library">Library</Link>
-                  </li>
-                  <li>
-                    <Link to="/customers">Customers</Link>
-                  </li>
-
-              </ul>
-
-            </nav>
-
-        <hr />
+              </nav>
 
 
-        <Route exact path="/search" render={props => <SearchForm
-          callbackUpdateStatus = {this.updateStatus} />}/>
-        <Route exact path="/library" render={props => <MovieCollection
-            callbackgetSelectedMovie = {this.getSelectedMovie}
-            callbackUpdateStatus = {this.updateStatus}  />} />
-        <Route path="/customers" render={props => <CustomerCollection
+
+
+              <Route exact path="/search" render={props => <SearchForm
+              callbackUpdateStatus = {this.updateStatus} />}/>
+              <Route exact path="/library" render={props => <MovieCollection
+              callbackgetSelectedMovie = {this.getSelectedMovie}
+              callbackUpdateStatus = {this.updateStatus}  />} />
+              <Route path="/customers" render={props => <CustomerCollection
               callbackgetSelectedCustomer = {this.getSelectedCustomer}
               callbackUpdateStatus = {this.updateStatus} />} />
 
-              </div>
+            </div>
         </Router>
       </main>
             );

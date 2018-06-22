@@ -11,6 +11,9 @@ class App extends Component {
           <p className="App-title">V i d e O c t o</p>
         </header>
         <Container />
+        <footer className="App-footer"> VideOcto, 2018
+          <p>Hannah,Brenda,Wini</p>
+        </footer>
 
       </div>
     );
