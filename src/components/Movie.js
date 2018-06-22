@@ -13,7 +13,8 @@ class Movie extends Component {
     externalId: PropTypes.number,
     callbackgetSelectedMovie: PropTypes.func,
     inLibrary: PropTypes.bool.isRequired,
-    callbackaddMovieToLibrary: PropTypes.func
+    callbackaddMovieToLibrary: PropTypes.func,
+    id: PropTypes.number.isRequired
   }
 
   onClickMovie=(event)=> {
@@ -47,9 +48,12 @@ else {
 
     return (
       <li className="movie-container">
-        <span className="title">{this.props.title}</span>
+        <div className="movie-info">
+          <strong className="title">{this.props.title}</strong>
+          <p className="release-date">{this.props.release_date}</p>
+        </div>
         <img src={this.props.image} alt={`cover art for ${this.props.title}`} className="image"/>
-        <span className="release-date">{this.props.release_date}</span>
+
         <div className="overview">
           <p>{this.props.overview}</p>
         </div>
