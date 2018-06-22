@@ -1,13 +1,19 @@
 
 .container-info {
-  display: grid;
-  grid-template-rows: 1fr 2fr;
+  /* display: grid;
+  grid-template-rows: 1fr 2fr; */
+}
+
+.container-info:last-child {
 }
 
 .top-bar {
   border-bottom: solid 2px #aaa;
   display: grid;
   grid-template-rows: 0.5fr 1.5fr 1fr 0.5fr;
+  min-width: 0;
+  height: 30vh;
+
 }
 
 .nav {
@@ -67,6 +73,8 @@
   border: solid 2px #aaa;
   margin-left: 10px;
   margin-right: 10px;
+  margin-top: 0;
+  margin-bottom: 0;
   align-self: center;
   padding-top: 5px;
   padding-bottom: 5px;
@@ -80,6 +88,7 @@
 
 .rental-button {
   grid-row: 4 / 5;
+  margin-top: 10px;
   margin-left: 40%;
   margin-right: 40%;
   font-family: 'Dosis', sans-serif;

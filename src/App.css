@@ -11,7 +11,6 @@
 
 .header {
   background-color: #1aa79a;
-  /* height: 100%; */
   padding-top: 0px;
   color: white;
   border: solid #1aa79a;
@@ -19,10 +18,11 @@
 }
 
 .main {
-  /* height: 100%; */
   grid-row: 2 / 3;
   display: grid;
   grid-template-rows: 3fr 5fr;
+  max-height: 85vh
+
 }
 
 .footer {
@@ -30,6 +30,7 @@
   grid-template-columns: 2fr 1fr 1fr 1fr;
   margin-top: 0;
   margin-bottom: 5px;
+  border-top: solid 2px #aaa;
 }
 
 .App-title {
@@ -44,6 +45,9 @@ ul {
 
 footer {
   font-family: 'Dosis', sans-serif;
-  color: #415058
-
+  color: #415058;
+  position: fixed;
+  bottom: 0;
+  background-color: white;
+  width: 100%;
 }
